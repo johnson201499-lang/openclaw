@@ -10,7 +10,6 @@ Docs: https://docs.openclaw.ai
   collapsible tool groups, direct per-tool toggles, and clearer runtime/source
   provenance. (#71405) Thanks @BunsDev.
 - Matrix: require full cross-signing identity trust for self-device verification and add `openclaw matrix verify self` so operators can establish that trust from the CLI. (#70401) Thanks @gumadeiras.
-- Security/SSRF: add opt-in network-level SSRF protection via an operator-managed HTTP forward proxy configured with `ssrfProxy.proxyUrl`, so deployments can route OpenClaw's process-local HTTP clients through their own Caddy, Squid, Envoy, or equivalent filtering proxy while keeping application-level guards active. (#70044) Thanks @jesse-merhi.
 
 ### Fixes
 
@@ -86,6 +85,7 @@ Docs: https://docs.openclaw.ai
 - CLI/Gateway: make `gateway status` start faster by skipping plugin loading on the read-only status path. (#71364) Thanks @andyylin.
 - Plugins/compatibility: add a central plugin compatibility registry and docs for SDK/config/setup/runtime deprecation records, including dated migration metadata for legacy harness naming and other plugin-facing aliases. Thanks @vincentkoc.
 - Agents/bootstrap: add `agents.defaults.contextInjection: "never"` to disable workspace bootstrap file injection for agents that fully own their prompt lifecycle. (#65006) Thanks @xDarkicex.
+- Security/SSRF: add opt-in network-level SSRF protection via an operator-managed HTTP forward proxy configured with `ssrfProxy.proxyUrl`, so deployments can route OpenClaw's process-local HTTP clients through their own Caddy, Squid, Envoy, or equivalent filtering proxy while keeping application-level guards active. (#70044) Thanks @jesse-merhi.
 
 ### Fixes
 
